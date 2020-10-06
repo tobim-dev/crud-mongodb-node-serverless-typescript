@@ -5,7 +5,9 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["post"],
+      "methods": [
+        "get"
+      ],
       "route": "journalEntries"
     },
     {
@@ -14,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/CreateJournalEntry/index.js"
+  "scriptFile": "../dist/GetAllJournalEntries/index.js"
 }

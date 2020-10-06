@@ -7,7 +7,7 @@ const config = {
 
 export default async function createConnection() {
   const connection = await MongoClient.connect(config.url, {
-    useNewUrlParser: true
+    useNewUrlParser: true, useUnifiedTopology: true 
   });
   const db = connection.db(config.dbName);
   return {

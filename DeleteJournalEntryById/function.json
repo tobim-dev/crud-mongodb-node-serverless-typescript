@@ -5,8 +5,10 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": ["post"],
-      "route": "journalEntries"
+      "methods": [
+        "delete"
+      ],
+      "route": "journalEntries/{id}"
     },
     {
       "type": "http",
@@ -14,5 +16,5 @@
       "name": "res"
     }
   ],
-  "scriptFile": "../dist/CreateJournalEntry/index.js"
+  "scriptFile": "../dist/DeleteJournalEntryById/index.js"
 }
