@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "version": "",
+  "name": "prilla-function-app",
+  "version": "0.0.1",
   "scripts": {
     "build": "tsc",
     "build:production": "npm run prestart && npm prune --production",
