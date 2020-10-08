@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ibhdUurP6wZxZ91tGxXbjG4U4V" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start:host">
+    <configuration name="build:production" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:production" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start:host" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start:host" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start:host" />
+        <item itemvalue="npm.deploy" />
+        <item itemvalue="npm.build:production" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="" />
+      <created>1602182286168</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1602182286168</updated>
+      <workItem from="1602182287402" duration="130000" />
+      <workItem from="1602183207539" duration="1435000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1899" height="262" key="GridCell.Tab.0.bottom" timestamp="1602184632788">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state width="1899" height="262" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
+    <state width="1899" height="262" key="GridCell.Tab.0.center" timestamp="1602184632788">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state width="1899" height="262" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
+    <state width="1899" height="262" key="GridCell.Tab.0.left" timestamp="1602184632786">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state width="1899" height="262" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1602184632786" />
+    <state width="1899" height="262" key="GridCell.Tab.0.right" timestamp="1602184632788">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state width="1899" height="262" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
+    <state x="659" y="125" width="602" height="783" key="find.popup" timestamp="1602184616239">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="659" y="125" width="602" height="783" key="find.popup/0.23.1920.988@0.23.1920.988" timestamp="1602184616239" />
+  </component>
+</project>

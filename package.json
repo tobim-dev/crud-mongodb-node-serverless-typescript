@@ -5,7 +5,6 @@
     "type": "git",
     "url": "https://github.com/tobim-dev/crud-mongodb-node-serverless-typescript"
   },
-  "license": "private",
   "version": "0.0.1",
   "scripts": {
     "build": "tsc",
@@ -14,7 +13,8 @@
     "prestart": "npm run build && func extensions install",
     "start:host": "func start",
     "start": "npm-run-all --parallel start:host watch",
-    "test": "echo \"No tests yet...\""
+    "test": "echo \"No tests yet...\"",
+    "deploy": "npm run build:production && func azure functionapp publish prilla-dev --typescript"
   },
   "devDependencies": {
     "@azure/functions": "^1.0.1-beta1",
