@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +30,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -76,30 +90,63 @@
       <option name="presentableId" value="Default" />
       <updated>1602182286168</updated>
       <workItem from="1602182287402" duration="130000" />
-      <workItem from="1602183207539" duration="1435000" />
+      <workItem from="1602183207539" duration="1718000" />
     </task>
+    <task id="LOCAL-00001" summary="Configured Webstorm and added deploy command npm script">
+      <created>1602184701925</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602184701925</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Configured Webstorm and added deploy command npm script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configured Webstorm and added deploy command npm script" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1899" height="262" key="GridCell.Tab.0.bottom" timestamp="1602184632788">
+    <state x="658" y="153" key="#Deployment" timestamp="1602184736981">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
-    <state width="1899" height="262" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
-    <state width="1899" height="262" key="GridCell.Tab.0.center" timestamp="1602184632788">
+    <state x="658" y="153" key="#Deployment/0.23.1920.988@0.23.1920.988" timestamp="1602184736981" />
+    <state width="1899" height="262" key="GridCell.Tab.0.bottom" timestamp="1602184759052">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
-    <state width="1899" height="262" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
-    <state width="1899" height="262" key="GridCell.Tab.0.left" timestamp="1602184632786">
+    <state width="1899" height="262" key="GridCell.Tab.0.bottom/0.23.1920.988@0.23.1920.988" timestamp="1602184759052" />
+    <state width="1899" height="262" key="GridCell.Tab.0.center" timestamp="1602184759051">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
-    <state width="1899" height="262" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1602184632786" />
-    <state width="1899" height="262" key="GridCell.Tab.0.right" timestamp="1602184632788">
+    <state width="1899" height="262" key="GridCell.Tab.0.center/0.23.1920.988@0.23.1920.988" timestamp="1602184759051" />
+    <state width="1899" height="262" key="GridCell.Tab.0.left" timestamp="1602184759051">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
-    <state width="1899" height="262" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1602184632788" />
+    <state width="1899" height="262" key="GridCell.Tab.0.left/0.23.1920.988@0.23.1920.988" timestamp="1602184759051" />
+    <state width="1899" height="262" key="GridCell.Tab.0.right" timestamp="1602184759052">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state width="1899" height="262" key="GridCell.Tab.0.right/0.23.1920.988@0.23.1920.988" timestamp="1602184759052" />
+    <state x="461" y="156" key="SettingsEditor" timestamp="1602184982829">
+      <screen x="0" y="23" width="1920" height="988" />
+    </state>
+    <state x="461" y="156" key="SettingsEditor/0.23.1920.988@0.23.1920.988" timestamp="1602184982829" />
     <state x="659" y="125" width="602" height="783" key="find.popup" timestamp="1602184616239">
       <screen x="0" y="23" width="1920" height="988" />
     </state>
