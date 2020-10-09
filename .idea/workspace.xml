@@ -15,9 +15,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="5297d2b3-96eb-4f76-8b5d-b522df297c21" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,6 +96,7 @@
       <updated>1602182286168</updated>
       <workItem from="1602182287402" duration="130000" />
       <workItem from="1602183207539" duration="1782000" />
+      <workItem from="1602269595385" duration="292000" />
     </task>
     <task id="LOCAL-00001" summary="Configured Webstorm and added deploy command npm script">
       <created>1602184701925</created>
@@ -113,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602184996704</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Change IDE Settings">
+      <created>1602269879136</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602269879136</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,10 +135,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Configured Webstorm and added deploy command npm script" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configured Webstorm and added deploy command npm script" />
+    <MESSAGE value="Change IDE Settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change IDE Settings" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
