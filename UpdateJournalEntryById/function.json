@@ -5,9 +5,7 @@
       "type": "httpTrigger",
       "direction": "in",
       "name": "req",
-      "methods": [
-        "put"
-      ],
+      "methods": ["put"],
       "route": "journalEntries/{id}"
     },
     {
