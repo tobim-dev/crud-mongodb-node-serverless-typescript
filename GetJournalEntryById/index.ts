@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { ObjectID } from "mongodb";
-import createMongoClient from "../shared/mongo";
+import createConnection from "../shared/mongoose";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     const { id } = req.params
@@ -14,14 +14,14 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     return
   }
 
-  const { db, connection } = await createMongoClient()
+  const { db } = await createConnection()
 
   const JournalEntries = db.collection('journalEntries')
 
   try {
     const body = await JournalEntries.findOne({ _id: new ObjectID(id) })
 
-    connection.close()
+    await db.close()
     context.res = {
       status: 200,
       body

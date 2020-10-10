@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import createMongoClient from "../shared/mongo";
+import createConnection from "../shared/mongoose";
 
 const httpTrigger: AzureFunction = async function (
   context: Context,
@@ -15,13 +15,13 @@ const httpTrigger: AzureFunction = async function (
     return;
   }
 
-  const { db, connection } = await createMongoClient();
+  const { db } = await createConnection();
 
   const JournalEntries = db.collection("journalEntries");
 
   try {
     const journalEntries = await JournalEntries.insertOne(journalEntry);
-    connection.close();
+    await db.close();
 
     context.res = {
       status: 201,

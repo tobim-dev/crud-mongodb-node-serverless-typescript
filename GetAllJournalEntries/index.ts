@@ -1,14 +1,14 @@
-import { AzureFunction, Context, HttpRequest } from "@azure/functions"
-import createMongoClient from "../shared/mongo";
+import { AzureFunction, Context } from "@azure/functions"
+import createConnection from "../shared/mongoose";
 
-const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
-    const { db, connection } = await createMongoClient()
+const httpTrigger: AzureFunction = async function (context: Context): Promise<void> {
+    const { db } = await createConnection()
 
   const JournalEntries = db.collection('journalEntries')
   const res = JournalEntries.find({})
   const body = await res.toArray()
 
-  connection.close()
+  await db.close()
 
   context.res = {
     status: 200,
