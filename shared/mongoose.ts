@@ -5,10 +5,7 @@ const config = {
 };
 
 export default async function createConnection() {
-  const mongoose = await connect(config.url, {useNewUrlParser: true})
-  // const connection = await MongoClient.connect(config.url, {
-  //   useNewUrlParser: true, useUnifiedTopology: true
-  // });
+  const mongoose = await connect(config.url, {useNewUrlParser: true, useUnifiedTopology: true })
   const db = mongoose.connection
   return {
     db

@@ -1,6 +1,7 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions"
 import { ObjectID } from "mongodb";
 import createConnection from "../shared/mongoose";
+import {JournalEntry, JournalEntrySchema} from "../models/journalEntry.model";
 
 const httpTrigger: AzureFunction = async function (context: Context, req: HttpRequest): Promise<void> {
     const { id } = req.params
@@ -16,19 +17,18 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
   }
 
   const { db } = await createConnection()
-  const JournalEntries = db.collection('journalEntries')
+  const JournalEntry = db.model<JournalEntry>("JournalEntry", JournalEntrySchema);
 
   try {
-    const journalEntries = await JournalEntries.findOneAndUpdate(
-      { _id: new ObjectID(id) },
-      { $set: journalEntry }
-    )
-
+    await JournalEntry.updateOne(
+        { _id: new ObjectID(id) },
+        journalEntry
+    );
     await db.close()
 
     context.res = {
       status: 200,
-      body: journalEntries
+      body: journalEntry
     }
   } catch (error) {
     context.res = {
