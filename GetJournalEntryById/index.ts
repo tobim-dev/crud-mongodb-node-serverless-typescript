@@ -18,7 +18,6 @@ const httpTrigger: AzureFunction = async function (
     try {
       const body = await JournalEntry.findOne({ _id: new ObjectID(id) });
 
-      await db.close();
       context.res = {
         status: 200,
         body,

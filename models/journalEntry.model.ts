@@ -4,15 +4,19 @@ import { model } from "mongoose";
 export interface JournalEntry extends Document {
   title: string;
   content: string;
-  userName: string;
+  date: Date;
+  entryDayTime: "Morning" | "Evening";
   createdAt: Date;
+  userId: string;
 }
 
 export const JournalEntrySchema: Schema<JournalEntry> = new Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
-  userName: { type: String, required: true },
+  date: { type: Date, required: true },
+  entryDayTime: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
+  userId: { type: String, required: true },
 });
 
 export default model<JournalEntry>("JournalEntry", JournalEntrySchema);

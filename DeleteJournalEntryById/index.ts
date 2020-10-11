@@ -17,7 +17,6 @@ const httpTrigger: AzureFunction = async function (
     );
     try {
       await JournalEntry.deleteOne({ _id: new ObjectID(id) });
-      await db.close();
       context.res = {
         status: 204,
         body: "Journal entry deleted successfully!",
