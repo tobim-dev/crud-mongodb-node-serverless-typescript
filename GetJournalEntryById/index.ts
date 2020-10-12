@@ -7,16 +7,19 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const { id } = req.params;
+  const { id, userId } = req.params;
 
-  if (id) {
+  if (id && userId) {
     const { db } = await createConnection();
     const JournalEntry = db.model<JournalEntry>(
       "JournalEntry",
       JournalEntrySchema
     );
     try {
-      const body = await JournalEntry.findOne({ _id: new ObjectID(id) });
+      const body = await JournalEntry.findOne({
+        _id: new ObjectID(id),
+        userId: userId,
+      });
 
       context.res = {
         status: 200,
@@ -31,7 +34,7 @@ const httpTrigger: AzureFunction = async function (
   } else {
     context.res = {
       status: 400,
-      body: "Please enter the correct JournalEntry Id number!",
+      body: "Please enter the correct JournalEntry Id number and user ID!",
     };
 
     return;

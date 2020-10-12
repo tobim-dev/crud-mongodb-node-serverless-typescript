@@ -7,10 +7,10 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const { id } = req.params;
+  const { id, userId } = req.params;
   const journalEntry = req.body || {};
 
-  if (!id || !journalEntry) {
+  if (!id || !userId || !journalEntry) {
     context.res = {
       status: 400,
       body: "Fields are required",
@@ -26,8 +26,18 @@ const httpTrigger: AzureFunction = async function (
   );
 
   try {
-    await JournalEntry.updateOne({ _id: new ObjectID(id) }, journalEntry);
-    await db.close();
+    const result = await JournalEntry.updateOne(
+      { _id: new ObjectID(id), userId: userId },
+      journalEntry
+    );
+
+    if (result.nModified === 0) {
+      context.res = {
+        status: 404,
+        body: "Journal Entry not found",
+      };
+      return;
+    }
 
     context.res = {
       status: 200,

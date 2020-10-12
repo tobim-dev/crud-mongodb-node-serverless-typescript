@@ -7,16 +7,16 @@ const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
-  const { id } = req.params;
+  const { id, userId } = req.params;
 
-  if (id) {
+  if (id && userId) {
     const { db } = await createConnection();
     const JournalEntry = db.model<JournalEntry>(
       "JournalEntry",
       JournalEntrySchema
     );
     try {
-      await JournalEntry.deleteOne({ _id: new ObjectID(id) });
+      await JournalEntry.deleteOne({ _id: new ObjectID(id), userId: userId });
       context.res = {
         status: 204,
         body: "Journal entry deleted successfully!",
@@ -30,7 +30,7 @@ const httpTrigger: AzureFunction = async function (
   } else {
     context.res = {
       status: 400,
-      body: "The fields are required!",
+      body: "The fields Journal Entry ID and User ID are required!",
     };
   }
 };

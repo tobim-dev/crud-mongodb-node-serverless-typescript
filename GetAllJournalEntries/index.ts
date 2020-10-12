@@ -7,14 +7,13 @@ const httpTrigger: AzureFunction = async function (
   req: HttpRequest
 ): Promise<void> {
   const { db } = await createConnection();
-  const { user } = req.params;
-  console.log(user);
+  const { userId } = req.params;
 
   const JournalEntry = db.model<JournalEntry>(
     "JournalEntry",
     JournalEntrySchema
   );
-  const body = await JournalEntry.find({ userId: user }).exec();
+  const body = await JournalEntry.find({ userId: userId }).exec();
 
   context.res = {
     status: 200,
