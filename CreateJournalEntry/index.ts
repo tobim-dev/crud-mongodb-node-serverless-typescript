@@ -2,11 +2,14 @@ import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import createConnection from "../shared/createConnection";
 import { JournalEntry, JournalEntrySchema } from "../models/journalEntry.model";
 
-const httpTrigger: AzureFunction = async function (
+export const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
   const journalEntry = (req.body || {}) as JournalEntry;
+
+  // TODO Remove this statement
+  context.log("Test Log");
 
   if (
     Object.keys(journalEntry).length === 0 &&
