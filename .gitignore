@@ -46,4 +46,5 @@ __pycache__/
 .idea/*
 .idea
 
+# Testing AddHock Configuration
 globalConfig.json
