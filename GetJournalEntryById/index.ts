@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { ObjectID } from "mongodb";
-import createConnection from "../shared/mongoose";
+import createConnection from "../shared/createConnection";
 import { JournalEntry, JournalEntrySchema } from "../models/journalEntry.model";
 
 const httpTrigger: AzureFunction = async function (
@@ -11,12 +11,12 @@ const httpTrigger: AzureFunction = async function (
 
   if (id && userId) {
     const { db } = await createConnection();
-    const JournalEntry = db.model<JournalEntry>(
+    const journalEntryModel = db.model<JournalEntry>(
       "JournalEntry",
       JournalEntrySchema
     );
     try {
-      const body = await JournalEntry.findOne({
+      const body = journalEntryModel.findOne({
         _id: new ObjectID(id),
         userId: userId,
       });

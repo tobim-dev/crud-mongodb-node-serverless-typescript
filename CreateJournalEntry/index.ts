@@ -1,5 +1,5 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
-import createConnection from "../shared/mongoose";
+import createConnection from "../shared/createConnection";
 import { JournalEntry, JournalEntrySchema } from "../models/journalEntry.model";
 
 const httpTrigger: AzureFunction = async function (
@@ -21,13 +21,13 @@ const httpTrigger: AzureFunction = async function (
 
   const { db } = await createConnection();
 
-  const JournalEntry = db.model<JournalEntry>(
+  const journalEntryModel = db.model<JournalEntry>(
     "JournalEntry",
     JournalEntrySchema
   );
 
   try {
-    const result = await JournalEntry.create(journalEntry);
+    const result = await journalEntryModel.create(journalEntry);
     context.res = {
       status: 201,
       body: result,

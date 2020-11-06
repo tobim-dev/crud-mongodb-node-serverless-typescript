@@ -1,6 +1,6 @@
 import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import { ObjectID } from "mongodb";
-import createConnection from "../shared/mongoose";
+import createConnection from "../shared/createConnection";
 import { JournalEntry, JournalEntrySchema } from "../models/journalEntry.model";
 
 const httpTrigger: AzureFunction = async function (
@@ -8,7 +8,7 @@ const httpTrigger: AzureFunction = async function (
   req: HttpRequest
 ): Promise<void> {
   const { id, userId } = req.params;
-  const journalEntry = req.body || {};
+  const journalEntry: JournalEntry = req.body || {};
 
   if (!id || !userId || !journalEntry) {
     context.res = {
@@ -20,18 +20,18 @@ const httpTrigger: AzureFunction = async function (
   }
 
   const { db } = await createConnection();
-  const JournalEntry = db.model<JournalEntry>(
+  const journalEntryModel = db.model<JournalEntry>(
     "JournalEntry",
     JournalEntrySchema
   );
 
   try {
-    const result = await JournalEntry.updateOne(
+    const result = journalEntryModel.updateOne(
       { _id: new ObjectID(id), userId: userId },
       journalEntry
     );
 
-    if (result.nModified === 0) {
+    if (!result) {
       context.res = {
         status: 404,
         body: "Journal Entry not found",
