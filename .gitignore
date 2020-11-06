@@ -45,3 +45,5 @@ __pycache__/
 # Webstorm Settings
 .idea/*
 .idea
+
+globalConfig.json

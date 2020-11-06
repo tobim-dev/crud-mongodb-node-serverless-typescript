@@ -13,7 +13,7 @@
     "prestart": "npm run build && func extensions install",
     "start:host": "func start",
     "start": "npm-run-all --parallel start:host watch",
-    "test": "jest",
+    "test": "jest --detectOpenHandles --coverage",
     "deploy": "npm run build:production && func azure functionapp publish prilla-dev --typescript"
   },
   "devDependencies": {
