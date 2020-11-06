@@ -8,7 +8,7 @@ const config = {
   }?retryWrites=true&w=majority`,
 };
 
-export default async function createConnection() {
+const createConnection = async() => {
   const mongoose = await connect(config.url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,3 +18,5 @@ export default async function createConnection() {
     db,
   };
 }
+
+export default createConnection;

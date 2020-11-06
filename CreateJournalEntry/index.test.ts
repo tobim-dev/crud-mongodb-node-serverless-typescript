@@ -1,16 +1,57 @@
 import httpTrigger from "./index";
-import { Context } from "@azure/functions";
+import {Context} from "@azure/functions";
+import createConnection from "../shared/createConnection";
+import {connect} from "mongoose";
 
-const defaultContext = {
-  log: jest.fn(),
+
+// Mocks
+
+jest.mock("../shared/createConnection");
+
+const mockCreateConnection = <jest.Mock<typeof createConnection>><unknown>createConnection;
+
+// @ts-ignore
+mockCreateConnection.mockImplementation(async () => {
+    const mongoose = await connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    const db = mongoose.connection;
+    return {
+        db,
+    };
+})
+
+const context = {
+    log: jest.fn(),
 };
 
-// TODO Create a real unit test
-it("should be called once", async function () {
-  const request = {
-    query: { name: "Bill" },
-  };
+describe("Tests for CreateJournalEntry Endpoint", () => {
 
-  await httpTrigger((defaultContext as unknown) as Context, request);
-  expect(defaultContext.log.mock.calls.length).toBe(1);
-});
+    const stubJournalEntry = {
+        title: "Again Entry",
+        content: "Try This",
+        date: new Date(),
+        entryDayTime: "Morning",
+        userId: "3az0Cc3FAheYUJq5nOJ8GrAPbuE3"
+    }
+
+    it("should return a 201 with a correct journalEntry inside the body", async () => {
+        const request = {
+            body: {...stubJournalEntry},
+        };
+
+        await httpTrigger((context as unknown) as Context, request);
+        expect((context as unknown as Context).res.status).toEqual(201)
+    });
+
+    it('should return a 400 with an empty body in the request', async () => {
+        const request = {
+            body: {},
+        };
+        await httpTrigger((context as unknown) as Context, request);
+        expect((context as unknown as Context).res.status).toEqual(400)
+    });
+})
+
+

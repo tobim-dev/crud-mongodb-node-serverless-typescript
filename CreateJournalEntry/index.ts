@@ -8,9 +8,6 @@ export const httpTrigger: AzureFunction = async function (
 ): Promise<void> {
   const journalEntry = (req.body || {}) as JournalEntry;
 
-  // TODO Remove this statement
-  context.log("Test Log");
-
   if (
     Object.keys(journalEntry).length === 0 &&
     journalEntry.constructor === Object
