@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testExecutions version="1">
+  <file path="/Users/tobiasm/WebstormProjects/prilla-serverless/CreateJournalEntry/index.test.ts">
+    <testCase name="Tests for CreateJournalEntry Endpoint should return a 201 with a correct journalEntry inside the body" duration="35"/>
+    <testCase name="Tests for CreateJournalEntry Endpoint should return a 400 with an empty body in the request" duration="1"/>
+  </file>
+</testExecutions>

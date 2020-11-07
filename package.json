@@ -25,6 +25,7 @@
     "@shelf/jest-mongodb": "^1.2.3",
     "@types/mongoose": "^5.7.36",
     "babel-jest": "^26.6.3",
+    "jest-sonar-reporter": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "2.1.2",
     "ts-node": "^9.0.0",
