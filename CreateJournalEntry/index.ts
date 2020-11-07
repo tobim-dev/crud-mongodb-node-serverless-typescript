@@ -32,14 +32,12 @@ const httpTrigger: AzureFunction = async function (
       status: 201,
       body: result,
     };
-    // await db.close();
   } catch (error) {
     context.log(error.message);
     context.res = {
       status: 500,
       body: "Error creating Journal Entry",
     };
-    // await db.close();
   }
 };
 
