@@ -1,27 +1,10 @@
 import httpTrigger from "./index";
 import { Context } from "@azure/functions";
-import createConnection from "../shared/createConnection";
-import { connect } from "mongoose";
 
 // Mocks
 jest.mock("../shared/createConnection");
 
-const mockCreateConnection = (createConnection as unknown) as jest.MockedFunction<
-  typeof createConnection
->;
-
-mockCreateConnection.mockImplementation(async () => {
-  const mongooseConnection = await connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  const db = mongooseConnection.connection;
-  return {
-    db,
-  };
-});
-
-const context = {
+const defaultContext = {
   log: jest.fn(),
 };
 
@@ -49,24 +32,24 @@ describe("Tests for CreateJournalEntry Endpoint", () => {
       body: { ...stubJournalEntry },
     };
 
-    await httpTrigger((context as unknown) as Context, request);
-    expect(((context as unknown) as Context).res.status).toEqual(201);
+    await httpTrigger((defaultContext as unknown) as Context, request);
+    expect(((defaultContext as unknown) as Context).res.status).toEqual(201);
   });
 
   it("should return a 400 with an empty body in the request", async () => {
     const request = {
       body: { ...emptyJournalEntry },
     };
-    await httpTrigger((context as unknown) as Context, request);
-    expect(((context as unknown) as Context).res.status).toEqual(400);
+    await httpTrigger((defaultContext as unknown) as Context, request);
+    expect(((defaultContext as unknown) as Context).res.status).toEqual(400);
   });
 
   it("should return a 500 with a false database connection", async () => {
     const request = {
       body: { ...stubWrongJournalEntry },
     };
-    await httpTrigger((context as unknown) as Context, request);
-    expect(((context as unknown) as Context).res.status).toEqual(500);
-    expect(context.log.mock.calls.length).toBe(1);
+    await httpTrigger((defaultContext as unknown) as Context, request);
+    expect(((defaultContext as unknown) as Context).res.status).toEqual(500);
+    expect(defaultContext.log.mock.calls.length).toBe(1);
   });
 });
