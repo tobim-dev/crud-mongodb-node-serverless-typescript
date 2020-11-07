@@ -26,8 +26,13 @@ jobs:
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         npm install
         npm run build --if-present
-        npm run test --if-present
+        npm run test:coverage --if-present
         popd
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - name: 'Run Azure Functions Action'
       uses: Azure/functions-action@v1
       id: fa
