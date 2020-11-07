@@ -2,7 +2,7 @@ import { AzureFunction, Context, HttpRequest } from "@azure/functions";
 import createConnection from "../shared/createConnection";
 import { JournalEntry, JournalEntrySchema } from "../models/journalEntry.model";
 
-export const httpTrigger: AzureFunction = async function (
+const httpTrigger: AzureFunction = async function (
   context: Context,
   req: HttpRequest
 ): Promise<void> {
@@ -32,14 +32,14 @@ export const httpTrigger: AzureFunction = async function (
       status: 201,
       body: result,
     };
-    await db.close();
+    // await db.close();
   } catch (error) {
     context.log(error.message);
     context.res = {
       status: 500,
       body: "Error creating Journal Entry",
     };
-    await db.close();
+    // await db.close();
   }
 };
 
