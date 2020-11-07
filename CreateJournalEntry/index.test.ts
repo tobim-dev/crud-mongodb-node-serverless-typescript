@@ -34,6 +34,14 @@ describe("Tests for CreateJournalEntry Endpoint", () => {
         userId: "3az0Cc3FAheYUJq5nOJ8GrAPbuE3"
     }
 
+    const stubWrongJournalEntry = {
+        content: "Try This",
+        entryDayTime: "Morning",
+        userId: "3az0Cc3FAheYUJq5nOJ8GrAPbuE3"
+    }
+
+
+
     it("should return a 201 with a correct journalEntry inside the body", async () => {
         const request = {
             body: {...stubJournalEntry},
@@ -49,6 +57,15 @@ describe("Tests for CreateJournalEntry Endpoint", () => {
         };
         await httpTrigger((context as unknown) as Context, request);
         expect((context as unknown as Context).res.status).toEqual(400)
+    });
+
+    it('should return a 500 with a false database connection', async () => {
+        const request = {
+            body: {...stubWrongJournalEntry},
+        };
+        await httpTrigger((context as unknown) as Context, request);
+        expect((context as unknown as Context).res.status).toEqual(500);
+        expect(context.log.mock.calls.length).toBe(1);
     });
 })
 
