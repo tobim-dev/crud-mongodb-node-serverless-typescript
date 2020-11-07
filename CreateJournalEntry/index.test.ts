@@ -3,20 +3,18 @@ import {Context} from "@azure/functions";
 import createConnection from "../shared/createConnection";
 import {connect} from "mongoose";
 
-
 // Mocks
-
 jest.mock("../shared/createConnection");
 
 const mockCreateConnection = <jest.Mock<typeof createConnection>><unknown>createConnection;
 
 // @ts-ignore
 mockCreateConnection.mockImplementation(async () => {
-    const mongoose = await connect(process.env.MONGO_URL, {
+    const mongooseConnection = await connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
     });
-    const db = mongoose.connection;
+    const db = mongooseConnection.connection;
     return {
         db,
     };
