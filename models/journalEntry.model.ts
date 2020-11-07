@@ -6,7 +6,7 @@ export interface JournalEntry extends Document {
   content: string;
   date: Date;
   entryDayTime: "Morning" | "Evening";
-  createdAt: Date;
+  createdAt?: Date;
   userId: string;
 }
 
