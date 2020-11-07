@@ -39,6 +39,7 @@ export const httpTrigger: AzureFunction = async function (
       status: 500,
       body: "Error creating Journal Entry",
     };
+    await db.close();
   }
 };
 
