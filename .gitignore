@@ -46,6 +46,11 @@ __pycache__/
 .idea/*
 .idea
 
+# VSCode Settings
+.vscode/*
+.vscode
+
 # Testing Configuration
 globalConfig.json
 coverage
+test-report.xml
